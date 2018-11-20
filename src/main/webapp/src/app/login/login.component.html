@@ -1,0 +1,21 @@
+<form class="form-signin" (ngSubmit)="onSubmit()">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <div class="alert alert-danger" *ngIf="loginError">
+    Provided credentials are not valid.
+  </div>
+  <div class="form-group">
+    <label for="inputLogin" class="sr-only">Login</label>
+    <input [(ngModel)]="login" #name="ngModel" type="text" id="inputLogin" name="login"
+           class="form-control" placeholder="Login" required autofocus minlength="5">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required minlength="8"
+           name="password"
+           [(ngModel)]="password">
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <div class="mt-2">
+    Not registered? <a routerLink="/register">Create an account</a>
+  </div>
+</form>
